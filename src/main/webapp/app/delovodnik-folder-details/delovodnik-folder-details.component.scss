@@ -1,0 +1,46 @@
+/* Add this to your component's style file or global styles */
+
+.custom {
+  padding-top: 0 !important;
+}
+
+.folder-details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.folder-details-table th,
+.folder-details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.folder-details-table th {
+  background-color: #f2f2f2;
+}
+
+.form-check-custom {
+  background-color: #f2f2f2 !important;
+}
+
+.action-button {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-button:hover {
+  background-color: #45a049;
+}
+.checkbox-column {
+  width: 1%; /* Set a specific width for the checkbox column */
+  white-space: nowrap; /* Prevent text wrapping in the checkbox column */
+}
+
+.modal-content-custom {
+  min-height: 500px;
+}

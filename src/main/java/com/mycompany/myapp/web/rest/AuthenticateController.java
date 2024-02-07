@@ -57,7 +57,12 @@ public class AuthenticateController {
             loginVM.getUsername(),
             loginVM.getPassword()
         );
-
+        System.out.println(
+            "POST======AuthenticateController========= authorize++++++++ AUTHORIZE " +
+            loginVM.getUsername() +
+            " PASSWORD" +
+            loginVM.getPassword()
+        );
         Authentication authentication = authenticationManagerBuilder.getObject().authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = this.createToken(authentication, loginVM.isRememberMe());
@@ -74,7 +79,7 @@ public class AuthenticateController {
      */
     @GetMapping("/authenticate")
     public String isAuthenticated(HttpServletRequest request) {
-        log.debug("REST request to check if the current user is authenticated");
+        log.debug("======= REST request to check if the current user is authenticated");
         return request.getRemoteUser();
     }
 

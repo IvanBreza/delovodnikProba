@@ -1,0 +1,42 @@
+1.
+resim tako sto sklonim vrules ya osonv ver ovatno i memdicinski osnov
+moguce da je 4 amoyda je samo dva
+
+za 507
+vrules['osnov2Id'] = [ [validateRequired] ];		
+vrules['medOsnov2Id'] = [ [validateRequired] ];
+
+za 435
+vrules['osnovId'] = [ [validateRequired] ];
+vrules['medOsnovId'] = [ [validateRequired] ];
+
+MISLIM DA JE GOTOVO
+
+
+
+
+2.resim tako sto sklonim funkciju zatvoriTezeBolestitab
+
+vidi zasto se zatavaruju hirurskeDiv
+
+3. mora da pojansi a i da pitam Marka
+
+200000131
+ucitajAktePZOStete
+ucitajAktePZOStete
+
+ObracunNaknadeLikBean
+ObracunskaCelinaLikBean
+
+
+********saveAktAutomatski*********
+
+
+4.skloni onTrajniInvaliditetChange i postaviPoruku
+
+5. RAZJASNITI da li hoce da bude isti ILC kao i za granu AO
+showIzvestajLekaraOpstaOdg
+
+210002994
+
+210003083

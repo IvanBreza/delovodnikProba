@@ -204,6 +204,8 @@ dependencies {
     implementation "org.springframework.security:spring-security-data"
     implementation "io.micrometer:micrometer-registry-prometheus"
     implementation "io.dropwizard.metrics:metrics-core"
+    implementation 'javax.servlet:javax.servlet-api:4.0.1' // Use the appropriate version
+
     // jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
 }
 

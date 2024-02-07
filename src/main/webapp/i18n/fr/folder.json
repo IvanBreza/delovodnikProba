@@ -1,0 +1,29 @@
+{
+  "tenthApp": {
+    "folder": {
+      "home": {
+        "title": "Folders",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Folder",
+        "createOrEditLabel": "Créer ou éditer un Folder",
+        "notFound": "Aucun Folder trouvé"
+      },
+      "created": "Un nouveau Folder a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Folder avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Folder avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Folder {{ id }} ?"
+      },
+      "detail": {
+        "title": "Folder"
+      },
+      "id": "ID",
+      "folderName": "Folder Name",
+      "folderPath": "Folder Path",
+      "description": "Description",
+      "file": "File",
+      "subfolder": "Subfolder",
+      "parentFolder": "Parent Folder"
+    }
+  }
+}

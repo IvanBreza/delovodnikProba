@@ -1,0 +1,11 @@
+id;read_permission;write_permission;delete_permission
+1;false;true;false
+2;false;false;true
+3;false;true;true
+4;false;false;false
+5;true;true;true
+6;false;true;false
+7;true;false;false
+8;true;false;true
+9;false;true;true
+10;true;true;false

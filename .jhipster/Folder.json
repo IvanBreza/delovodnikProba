@@ -1,0 +1,48 @@
+{
+  "applications": ["tenth"],
+  "changelogDate": "20231220150152",
+  "dto": "mapstruct",
+  "entityTableName": "folder",
+  "fields": [
+    {
+      "fieldName": "folderName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "folderPath",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Folder",
+  "relationships": [
+    {
+      "otherEntityName": "file",
+      "otherEntityRelationshipName": "folder",
+      "relationshipName": "file",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "folder",
+      "otherEntityRelationshipName": "parentFolder",
+      "relationshipName": "subfolder",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "folder",
+      "otherEntityRelationshipName": "subfolder",
+      "relationshipName": "parentFolder",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

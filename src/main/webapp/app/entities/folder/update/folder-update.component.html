@@ -1,0 +1,101 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-folder-heading" data-cy="FolderCreateUpdateHeading" jhiTranslate="tenthApp.folder.home.createOrEditLabel">
+        Create or edit a Folder
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tenthApp.folder.folderName" for="field_folderName">Folder Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="folderName"
+            id="field_folderName"
+            data-cy="folderName"
+            formControlName="folderName"
+          />
+          <div *ngIf="editForm.get('folderName')!.invalid && (editForm.get('folderName')!.dirty || editForm.get('folderName')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('folderName')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tenthApp.folder.folderPath" for="field_folderPath">Folder Path</label>
+          <input
+            type="text"
+            class="form-control"
+            name="folderPath"
+            id="field_folderPath"
+            data-cy="folderPath"
+            formControlName="folderPath"
+          />
+          <div *ngIf="editForm.get('folderPath')!.invalid && (editForm.get('folderPath')!.dirty || editForm.get('folderPath')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('folderPath')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+              >This field is required.</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tenthApp.folder.description" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tenthApp.folder.parentFolder" for="field_parentFolder">Parent Folder</label>
+          <select
+            class="form-control"
+            id="field_parentFolder"
+            data-cy="parentFolder"
+            name="parentFolder"
+            formControlName="parentFolder"
+            [compareWith]="compareFolder"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="folderOption" *ngFor="let folderOption of foldersSharedCollection">{{ folderOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

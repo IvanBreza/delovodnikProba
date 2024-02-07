@@ -9,6 +9,7 @@ import { errorRoute } from './layouts/error/error.route';
 import HomeComponent from './home/home.component';
 import NavbarComponent from './layouts/navbar/navbar.component';
 import LoginComponent from './login/login.component';
+import { DelovodnikComponent } from './delovodnik/delovodnik.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import LoginComponent from './login/login.component';
         {
           path: '',
           component: HomeComponent,
-          title: 'home.title',
+          /*  title: 'home.title', */
         },
         {
           path: '',
@@ -44,6 +45,10 @@ import LoginComponent from './login/login.component';
         {
           path: '',
           loadChildren: () => import(`./entities/entity-routing.module`).then(({ EntityRoutingModule }) => EntityRoutingModule),
+        },
+        {
+          path: 'delovodnik',
+          component: DelovodnikComponent,
         },
         ...errorRoute,
       ],

@@ -21,6 +21,9 @@ logging:
     com.mycompany.myapp: DEBUG
 
 spring:
+  output:
+    ansi:
+      enabled: always
   devtools:
     restart:
       enabled: true

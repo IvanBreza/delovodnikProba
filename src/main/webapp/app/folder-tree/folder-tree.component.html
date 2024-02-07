@@ -1,0 +1,112 @@
+<!-- <ul>
+  <li *ngFor="let folder of folders">
+    <div (click)="toggleFolderTree(folder); onFolderClick(folder)">
+      {{ folder.folderName }}
+    </div>
+    <ul *ngIf="folder.isExpanded && folder.subfolders && folder.subfolders.length">
+      <jhi-folder-tree [folders]="folder.subfolders" (folderSelected)="onSubfolderClickThree($event)"></jhi-folder-tree>
+    </ul>
+  </li>
+</ul> -->
+
+<!-- <ul class="list-group">
+  <li *ngFor="let folder of folders" class="list-group-item">
+    <div (click)="toggleFolderTree(folder); onFolderClick(folder)">
+      <i class="bi bi-folder"></i> {{ folder.folderName }}
+    </div>
+    <ul *ngIf="folder.isExpanded && folder.subfolders && folder.subfolders.length" class="list-group">
+      <jhi-folder-tree [folders]="folder.subfolders" (folderSelected)="onSubfolderClickThree($event)"></jhi-folder-tree>
+    </ul>
+  </li>
+</ul> -->
+
+<!-- <ul class="list-group">
+  <li *ngFor="let folder of folders" class="list-group-item">
+    <div (click)="toggleFolderTree(folder); onFolderClick(folder)">
+      <span [class]="folder.isExpanded ? 'fas fa-folder-open' : 'fas fa-folder'"></span> {{ folder.folderName }}
+    </div>
+    <ul *ngIf="folder.isExpanded && folder.subfolders && folder.subfolders.length">
+      <jhi-folder-tree [folders]="folder.subfolders" (folderSelected)="onSubfolderClickThree($event)"></jhi-folder-tree>
+    </ul>
+  </li>
+</ul> -->
+
+<!-- <nav id="sidebar">
+  <ul class="list-unstyled components">
+    <li class="list-group-item" *ngFor="let folder of folders">
+      <div (click)="toggleFolderTree(folder); onFolderClick(folder)">
+        <span [class]="folder.isExpanded ? 'fas fa-folder-open' : 'fas fa-folder'"></span> {{ folder.folderName }}
+      </div>
+      <ul *ngIf="folder.isExpanded && folder.subfolders && folder.subfolders.length">
+        <jhi-folder-tree [folders]="folder.subfolders" (folderSelected)="onSubfolderClickThree($event)"></jhi-folder-tree>
+      </ul>
+    </li>
+  </ul>
+
+  <ul class="list-unstyled CTAs">
+    <li>
+      <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
+    </li>
+    <li>
+      <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
+    </li>
+  </ul>
+</nav> -->
+
+<!-- <div>
+  <ul class="list-unstyled components">
+    <li *ngFor="let folder of folders" [class.active]="folder.isClicked">
+      <div (click)="toggleFolderTree(folder); onFolderClick(folder)">
+        <span [class]="folder.isExpanded ? 'fas fa-folder-open' : 'fas fa-folder'"></span> {{ folder.folderName }}
+      </div>
+      <ul *ngIf="folder.isExpanded && folder.subfolders && folder.subfolders.length">
+        <jhi-folder-tree [folders]="folder.subfolders" (folderSelected)="onSubfolderClickThree($event)"></jhi-folder-tree>
+      </ul>
+    </li>
+  </ul>
+</div> -->
+
+<!-- <div>
+  <ul class="list-unstyled components">
+    <li *ngFor="let folder of folders" [class.active]="folder.isClicked">
+      <div (click)="toggleFolderTree(folder); onFolderClick(folder)" class="d-flex align-items-center">
+
+        <span class="folder-icon mr-2" [class]="folder.isExpanded ? 'fas fa-folder-open' : 'fas fa-folder'"></span>
+
+        <span class="highlited" [ngClass]="{'font-weight-bold': folder.isExpanded}">{{ folder.folderName }}</span>
+      </div>
+      <ul *ngIf="folder.isExpanded && folder.subfolders && folder.subfolders.length">
+        <li>
+          <div  (click)="onSubfolderClickThree($event)">
+            <jhi-folder-tree [folders]="folder.subfolders"></jhi-folder-tree>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div> -->
+
+<div>
+  <ul class="list-unstyled components">
+    <li *ngFor="let folder of folders" [class.active]="folder.isClicked" [ngClass]="{ 'highlight-folder': lastClickedFolder === folder }">
+      <div (dblclick)="toggleFolderTree(folder)" (click)="onFolderClick(folder)" class="d-flex align-items-center">
+        <!-- Bootstrap folder icon class -->
+        <img [src]="getFolderIcon(folder)" alt="Folder Icon" class="mr-2" />
+        <!--  <i class="bi bi-folder{{ folder.isExpanded ? '-fill' : '' }} mr-2"></i> -->
+        <!-- Bootstrap text styling class -->
+        <span class="folder-name font-weight-bold">{{ folder.folderName }}</span>
+      </div>
+      <ul *ngIf="folder.isExpanded && folder.subfolders && folder.subfolders.length">
+        <li>
+          <div>
+            <jhi-folder-tree
+              [folders]="folder.subfolders"
+              (folderSelected)="onSubfolderClick($event)"
+              [ngClass]="{ 'highlight-folder': lastClickedFolder === folder }"
+            ></jhi-folder-tree>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

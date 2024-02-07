@@ -1,0 +1,12 @@
+<p>sidebar works!</p>
+<ul>
+  <li *ngFor="let folder of folders">
+    <span (click)="toggleFolder(folder)">[{{ folder.isExpanded ? '-' : '+' }}]</span>
+    <span>{{ folder.folderName }}</span>
+    <!--  <ul *ngIf="folder.isExpanded">
+      <li *ngFor="let fileName of folder.files" (click)="selectFile(folder, fileName)">
+        {{ fileName }}
+      </li>
+    </ul> -->
+  </li>
+</ul>

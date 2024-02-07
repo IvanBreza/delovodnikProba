@@ -1,0 +1,39 @@
+application {
+  config {
+    baseName tenth
+    packageName com.mycompany.myapp
+    authenticationType jwt
+    buildTool gradle
+  }
+  entities *
+}
+
+entity File {
+    fileName String required
+    filePath String required
+    uploadDate Instant required
+    fileType String
+    size Long
+}
+
+entity Folder {
+    folderName String required
+	folderPath String required
+    description String
+}
+
+entity Permission {
+    readPermission Boolean
+    writePermission Boolean
+    deletePermission Boolean
+}
+
+
+relationship OneToMany {
+    Folder{file} to File{folder},
+    Folder{subfolder} to Folder{parentFolder}
+}
+
+dto all with mapstruct
+service * with serviceClass
+

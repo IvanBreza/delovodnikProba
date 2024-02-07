@@ -11,6 +11,7 @@ import { AccountService } from 'app/core/auth/account.service';
   standalone: true,
   imports: [SharedModule, FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
 })
 export default class LoginComponent implements OnInit, AfterViewInit {
   @ViewChild('username', { static: false })
@@ -32,6 +33,7 @@ export default class LoginComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     // if already authenticated then navigate to home page
+    console.log('LoginComponent--------------ngOnInit----------------LOGINCOMPONENT++++++ NGONINIT');
     this.accountService.identity().subscribe(() => {
       if (this.accountService.isAuthenticated()) {
         this.router.navigate(['']);
@@ -40,16 +42,19 @@ export default class LoginComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    console.log('LoginComponent--------------ngAfterViewInit----------------', this.username.nativeElement);
     this.username.nativeElement.focus();
   }
 
   login(): void {
+    console.log('LoginComponent--------------login----------------LOGINCOMPONENT+++++ LOGIN', this.username);
+    /* console.log("RAW VALUE ",this.loginForm.getRawValue) */
     this.loginService.login(this.loginForm.getRawValue()).subscribe({
       next: () => {
         this.authenticationError = false;
         if (!this.router.getCurrentNavigation()) {
           // There were no routing during login (eg from navigationToStoredUrl)
-          this.router.navigate(['']);
+          this.router.navigate(['/delovodnik']);
         }
       },
       error: () => (this.authenticationError = true),

@@ -1,0 +1,25 @@
+.styled-folder-tree {
+  background-color: #f8f8f8;
+  min-height: calc(100vh - 40px);
+  border-style: ridge;
+  border-color: #c0c0c0;
+  user-select: none;
+  padding-left: 10px;
+}
+
+.folder-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f2f2f2;
+}
+
+.folder-details-table th,
+.folder-details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.folder-details-table th {
+  background-color: #f2f2f2;
+}

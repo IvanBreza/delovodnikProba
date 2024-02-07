@@ -20,6 +20,15 @@ import { fontAwesomeIcons } from './config/font-awesome-icons';
 import MainComponent from './layouts/main/main.component';
 import MainModule from './layouts/main/main.module';
 import { AppPageTitleStrategy } from './app-page-title-strategy';
+import { DelovodnikComponent } from './delovodnik/delovodnik.component';
+import { FolderComponent } from './entities/folder/list/folder.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { FolderTreeComponent } from './folder-tree/folder-tree.component';
+import { DelovodnikFolderDetailsComponent } from './delovodnik-folder-details/delovodnik-folder-details.component';
+import { FormsModule } from '@angular/forms';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
 
 @NgModule({
   imports: [
@@ -31,6 +40,9 @@ import { AppPageTitleStrategy } from './app-page-title-strategy';
     HttpClientModule,
     MainModule,
     TranslationModule,
+    FormsModule,
+    NgxExtendedPdfViewerModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     Title,
@@ -38,8 +50,11 @@ import { AppPageTitleStrategy } from './app-page-title-strategy';
     { provide: NgbDateAdapter, useClass: NgbDateDayjsAdapter },
     httpInterceptorProviders,
     { provide: TitleStrategy, useClass: AppPageTitleStrategy },
+    BsModalRef,
+    BsModalService,
   ],
   bootstrap: [MainComponent],
+  declarations: [],
 })
 export class AppModule {
   constructor(applicationConfigService: ApplicationConfigService, iconLibrary: FaIconLibrary, dpConfig: NgbDatepickerConfig) {

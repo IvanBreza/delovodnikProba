@@ -1,0 +1,24 @@
+{
+  "applications": ["tenth"],
+  "changelogDate": "20231220150153",
+  "dto": "mapstruct",
+  "entityTableName": "permission",
+  "fields": [
+    {
+      "fieldName": "readPermission",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "writePermission",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "deletePermission",
+      "fieldType": "Boolean"
+    }
+  ],
+  "name": "Permission",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

@@ -1,0 +1,3 @@
+
+u LoginComponent metoda login u njogj promenim this.router.navigate(['/delovodnik']);
+ navigate gde da ide posle uspesnog logina

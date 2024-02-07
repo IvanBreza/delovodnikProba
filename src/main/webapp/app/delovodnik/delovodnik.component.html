@@ -1,0 +1,171 @@
+<div>
+  <nav class="navbar navbar-expand-lg p-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="../../content/images/BSE-logo.png" alt="logo" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link mx-2"
+              [class.active]="selectedNavItemIndex === 0"
+              (click)="selectNavItem(0)"
+              aria-current="page"
+              aria-current="page"
+              href="/delovodnik"
+              >Dokumneti</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link mx-2"
+              [class.active]="selectedNavItemIndex === 1"
+              (click)="selectNavItem(1)"
+              aria-current="page"
+              aria-current="page"
+              >Racuni</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link mx-2"
+              [class.active]="selectedNavItemIndex === 2"
+              (click)="selectNavItem(2)"
+              aria-current="page"
+              aria-current="page"
+              >Administracija</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link mx-2"
+              [class.active]="selectedNavItemIndex === 3"
+              (click)="selectNavItem(3)"
+              aria-current="page"
+              aria-current="page"
+              href=""
+              >Podesavanja</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link mx-2"
+              [class.active]="selectedNavItemIndex === 4"
+              (click)="selectNavItem(4)"
+              aria-current="page"
+              aria-current="page"
+              href=""
+              >Arhiva</a
+            >
+          </li>
+
+          <!--   <li class="nav-item dropdown">
+            <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Company
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Dokumneti</a></li>
+              <li><a class="dropdown-item" href="#">Racuni</a></li>
+              <li><a class="dropdown-item" href="#">Administracija</a></li>
+              <li><a class="dropdown-item" href="#">Podesavanja</a></li>
+              <li><a class="dropdown-item" href="#">Arhiva</a></li>
+            </ul>
+          </li> -->
+        </ul>
+        <ul class="navbar-nav ms-auto d-none d-lg-inline-flex">
+          <li class="nav-item mx-2">
+            <a class="nav-link text-dark h5" href="" target="blank"><i class="fab fa-google-plus-square"></i></a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-dark h5" href="" target="blank"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link text-dark h5" href="" target="blank"><i class="fab fa-facebook-square"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="container-custom">
+        <div class="col-md-12">
+          <div class="d-flex justify-content-center mb-3">
+            <!-- Use flexbox to align items -->
+            <button type="button" class="btn btn-primary" (click)="openCreateFolderModal(createFolderModal)">Create New Folder</button>
+            <div class="file-upload-container ml-2">
+              <button type="button" class="btn btn-info" (click)="openFileUploadModal(fileUploadModal)">Upload File</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 custom-padding custom-height">
+        <jhi-styled-jhi-folder-tree [folders]="folders" (folderSelected)="onFolderSelected($event)"></jhi-styled-jhi-folder-tree>
+      </div>
+      <div class="col-md-9 custom-padding">
+        <ng-template #fileUploadModal let-modal>
+          <div role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Upload File</h5>
+                  <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <input type="file" class="form-control" (change)="onFileSelected($event)" />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="uploadFile()">Upload</button>
+                  <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <ng-template #createFolderModal let-modal>
+          <div role="dialog">
+            <div role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Create New Folder</h5>
+                  <button type="button" class="close" (click)="closeModal()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <input type="text" class="form-control" [(ngModel)]="newFolderName" placeholder="Folder Name" />
+                  <hr />
+                  <input type="text" class="form-control" [(ngModel)]="parentFolder" placeholder="Parent Folder" />
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" (click)="createFolder()">Save</button>
+                  <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+        <jhi-delovodnik-folder-details
+          (folderSelected)="onFolderSelected($event)"
+          [selectedFolder]="selectedFolder"
+          (toggleFolder)="toggleFolder($event)"
+        ></jhi-delovodnik-folder-details>
+      </div>
+    </div>
+  </div>
+</div>

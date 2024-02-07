@@ -1,0 +1,43 @@
+.custom-padding {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.custom-height {
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #b8b8b8;
+  opacity: 0.5;
+}
+
+.nav-item a {
+  color: azure;
+  font-size: 1.7rem !important;
+  font-weight: 650 !important;
+
+  letter-spacing: 0.2rem !important;
+}
+
+.nav-item a.active {
+  color: black /* Your selected color */;
+  font-weight: bold; /* Change font weight or any other styles as needed */
+}
+
+.navbar-brand {
+  margin-right: 70px;
+}
+
+.navbar-collapse {
+  margin-left: auto;
+}
+
+.container-custom {
+  padding-top: 10px;
+}

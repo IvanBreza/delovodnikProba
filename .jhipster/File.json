@@ -1,0 +1,43 @@
+{
+  "applications": ["tenth"],
+  "changelogDate": "20231220150151",
+  "dto": "mapstruct",
+  "entityTableName": "file",
+  "fields": [
+    {
+      "fieldName": "fileName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "filePath",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "uploadDate",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fileType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "size",
+      "fieldType": "Long"
+    }
+  ],
+  "name": "File",
+  "relationships": [
+    {
+      "otherEntityName": "folder",
+      "otherEntityRelationshipName": "file",
+      "relationshipName": "folder",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

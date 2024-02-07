@@ -1,0 +1,134 @@
+<div class="custom" *ngIf="selectedFolder">
+  <button type="button" class="btn btn-success" (click)="downloadFiles()">Download Files</button>
+  <table class="folder-details-table">
+    <thead>
+      <tr>
+        <th class="checkbox-column"></th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+      <tr>
+        <td class="checkbox-column form-check-custom">
+          <div class="form-check form-check-custom">
+            <input class="form-check-input" type="checkbox" value="" />
+          </div>
+        </td>
+        <th>
+          <span (click)="toggleSubFolder(selectedFolder)">
+            <img src="../../content/images/icons8-folder-16.png" alt="Custom Icon" width="20" height="20" />
+            &nbsp; {{ selectedFolder?.folderName }}</span
+          >
+        </th>
+        <th>Folder</th>
+        <th>
+          <button type="button" class="btn btn-success" (click)="yourActionForSubfolder(subfolder)">Action</button>
+        </th>
+      </tr>
+    </thead>
+
+    <tbody *ngIf="selectedFolder?.isExpanded && (selectedFolder?.subfolders?.length || selectedFolder?.files?.length)">
+      <tr *ngFor="let subfolder of selectedFolder?.subfolders">
+        <td class="checkbox-column">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" />
+          </div>
+        </td>
+        <td>
+          <span (click)="onSubfolderClick(subfolder)">
+            <img src="../../content/images/icons8-folder-16.png" alt="Custom Icon" width="20" height="20" />
+            &nbsp; {{ subfolder?.folderName }}</span
+          >
+        </td>
+        <td>Folder</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="yourActionForSubfolder(subfolder)">Action</button>
+        </td>
+      </tr>
+
+      <tr *ngFor="let file of selectedFolder?.files" (click)="onFileSelected(file)">
+        <td class="checkbox-column">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" />
+          </div>
+        </td>
+        <td>
+          {{ file?.fileName }}
+        </td>
+        <td>File</td>
+        <td>
+          <button type="button" class="btn btn-success" (click)="downloadFile(file.filePath)">Download</button>
+          <button type="button" class="btn btn-info">Edit</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+          <button type="button" class="btn btn-secondary" (click)="loadPdfContent(file.filePath)">View PDF</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <div style="background-color: blueviolet; min-width: 100px; min-height: 200;">
+
+    <pdf-viewer
+          [src]="pdfSrc"
+          [render-text]="true"
+          [original-size]="true"
+          style="width: 900px; height: 1100px"
+  ></pdf-viewer>
+  </div> -->
+
+  <div>
+    <ngx-extended-pdf-viewer [src]="pdfContentUrlString" style="height: 100%"></ngx-extended-pdf-viewer>
+  </div>
+
+  <!--  <div *ngIf="pdfContentUrl1$ | async as pdfContentUrl">
+    <ngx-extended-pdf-viewer [src]="pdfContentUrlString" style="width: 400px; height: 500px"></ngx-extended-pdf-viewer>
+  </div>
+ -->
+
+  <!-- <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Preview Invoice : <b></b></h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+    </div>
+    <div class="modal-body" style="width: 100px; height: 400;">
+      <ngx-extended-pdf-viewer [src]="pdfContentUrlString"></ngx-extended-pdf-viewer>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" (click)="d('Cross click')">Close</button>
+    </div>
+  </ng-template> -->
+
+  <!--  <ng-template #previewModal let-modal>
+    <div role="dialog">
+      <div role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Preview</h5>
+            <button type="button" class="close" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-content-custom">
+              ngx-extended-pdf-viewer
+              ngx-extended-pdf-viewer
+
+            <ngx-extended-pdf-viewer [src]="pdfContentUrlString" style="min-height: 400px;"></ngx-extended-pdf-viewer>
+          </div>
+          </div>
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-primary" >Save</button>
+            <button type="button" class="btn btn-secondary">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template> -->
+</div>
+
+<div *ngIf="!selectedFolder">
+  <p>No folder selected</p>
+</div>
+
+<!-- <ngx-extended-pdf-viewer></ngx-extended-pdf-viewer> -->

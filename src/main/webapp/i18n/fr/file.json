@@ -1,0 +1,29 @@
+{
+  "tenthApp": {
+    "file": {
+      "home": {
+        "title": "Files",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau File",
+        "createOrEditLabel": "Créer ou éditer un File",
+        "notFound": "Aucun File trouvé"
+      },
+      "created": "Un nouveau File a été créé avec l'identifiant {{ param }}",
+      "updated": "Le File avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le File avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le File {{ id }} ?"
+      },
+      "detail": {
+        "title": "File"
+      },
+      "id": "ID",
+      "fileName": "File Name",
+      "filePath": "File Path",
+      "uploadDate": "Upload Date",
+      "fileType": "File Type",
+      "size": "Size",
+      "folder": "Folder"
+    }
+  }
+}

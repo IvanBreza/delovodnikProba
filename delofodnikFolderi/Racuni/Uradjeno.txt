@@ -1,0 +1,10 @@
+namesteno da se ciste polja sifra, procenat i komentar ukoliko se izabere da trajni ivalidited nije - da
+
+namesteno brisanje ILC-a i za njega sve pomInvaliditete ukoliko ih ima
+
+za snimanje pomInvaliditeta je obavezno uneti sifru, ako nema sifru nece da snimi
+takodje kada se uzima lista pomInvaliditeta  za neki ILC namesteno je da se uzimaju samo oni pomIvaliditeti koji imaju sifru tj kojim sifra nije null
+
+
+
+NIJE URADJENO validacija unosa sifre

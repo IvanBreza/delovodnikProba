@@ -1,0 +1,117 @@
+<div>
+  <h2 id="page-heading" data-cy="FileHeading">
+    <span jhiTranslate="tenthApp.file.home.title">Files</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="tenthApp.file.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-file"
+        [routerLink]="['/file/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="tenthApp.file.home.createLabel">Create a new File</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="files?.length === 0">
+    <span jhiTranslate="tenthApp.file.home.notFound">No Files found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="files && files.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fileName">
+            <div class="d-flex">
+              <span jhiTranslate="tenthApp.file.fileName">File Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="filePath">
+            <div class="d-flex">
+              <span jhiTranslate="tenthApp.file.filePath">File Path</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="uploadDate">
+            <div class="d-flex">
+              <span jhiTranslate="tenthApp.file.uploadDate">Upload Date</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="fileType">
+            <div class="d-flex">
+              <span jhiTranslate="tenthApp.file.fileType">File Type</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="size">
+            <div class="d-flex">
+              <span jhiTranslate="tenthApp.file.size">Size</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="folder.id">
+            <div class="d-flex">
+              <span jhiTranslate="tenthApp.file.folder">Folder</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let file of files; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/file', file.id, 'view']">{{ file.id }}</a>
+          </td>
+          <td>{{ file.fileName }}</td>
+          <td>{{ file.filePath }}</td>
+          <td>{{ file.uploadDate | formatMediumDatetime }}</td>
+          <td>{{ file.fileType }}</td>
+          <td>{{ file.size }}</td>
+          <td>
+            <div *ngIf="file.folder">
+              <a [routerLink]="['/folder', file.folder.id, 'view']">{{ file.folder.id }}</a>
+            </div>
+          </td>
+          <td class="text-end">
+            <div class="btn-group">
+              <a [routerLink]="['/file', file.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </a>
+
+              <a [routerLink]="['/file', file.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </a>
+
+              <button type="submit" (click)="delete(file)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

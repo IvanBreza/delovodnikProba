@@ -1,0 +1,40 @@
+namesteno da se ciste polja sifra, procenat i komentar ukoliko se izabere da trajni ivalidited nije - da
+
+namesteno brisanje ILC-a i za njega sve pomInvaliditete ukoliko ih ima
+
+za snimanje pomInvaliditeta je obavezno uneti sifru, ako nema sifru nece da snimi
+takodje kada se uzima lista pomInvaliditeta  za neki ILC namesteno je da se uzimaju samo oni pomIvaliditeti koji imaju sifru tj kojim sifra nije null
+
+
+sta ona kaze da joj taj deo koda ne radi?
+
+
+kaze da ne snima sifru procenat i komentar
+
+ona radi na qa? koja verzija
+
+
+
+nije qa  ILC razvoj nismo to stavljali na qa
+
+
+pa cuva nego ona gleda u polja za novi unos
+
+iskopiraj ovaj ekran (ona proba identicno ovako kako smo sad probali). I zakaci ekran i napisi ovo.
+
+
+
+
+
+Probano na http://vm-dev:11001/eDDORSuite u tabeli se napravio red (prikazano na slici u prilogu). 
+Forma iznad je za unos novog u tabeli ispod su prikazani uneti podaci.
+
+
+ok
+
+
+
+
+
+
+

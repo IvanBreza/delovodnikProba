@@ -78,6 +78,7 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
     private String resolvePathPrefix() {
         String fullExecutablePath = decode(this.getClass().getResource("").getPath(), StandardCharsets.UTF_8);
         String rootPath = Paths.get(".").toUri().normalize().getPath();
+        System.out.println("WebConfigurer----------------------- " + rootPath);
         String extractedPath = fullExecutablePath.replace(rootPath, "");
         int extractionEndIndex = extractedPath.indexOf("build/");
         if (extractionEndIndex <= 0) {

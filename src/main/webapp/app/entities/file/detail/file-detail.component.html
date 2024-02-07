@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="file">
+      <h2 data-cy="fileDetailsHeading"><span jhiTranslate="tenthApp.file.detail.title">File</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ file.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="tenthApp.file.fileName">File Name</span></dt>
+        <dd>
+          <span>{{ file.fileName }}</span>
+        </dd>
+        <dt><span jhiTranslate="tenthApp.file.filePath">File Path</span></dt>
+        <dd>
+          <span>{{ file.filePath }}</span>
+        </dd>
+        <dt><span jhiTranslate="tenthApp.file.uploadDate">Upload Date</span></dt>
+        <dd>
+          <span>{{ file.uploadDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="tenthApp.file.fileType">File Type</span></dt>
+        <dd>
+          <span>{{ file.fileType }}</span>
+        </dd>
+        <dt><span jhiTranslate="tenthApp.file.size">Size</span></dt>
+        <dd>
+          <span>{{ file.size }}</span>
+        </dd>
+        <dt><span jhiTranslate="tenthApp.file.folder">Folder</span></dt>
+        <dd>
+          <div *ngIf="file.folder">
+            <a [routerLink]="['/folder', file.folder.id, 'view']">{{ file.folder.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/file', file.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

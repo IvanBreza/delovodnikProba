@@ -2,14 +2,6 @@
 Main page styles
 ========================================================================== */
 
-.hipster {
-  display: inline-block;
-  width: 347px;
-  height: 497px;
-  background: url('../../content/images/jhipster_family_member_1.svg') no-repeat center top;
-  background-size: contain;
-}
-
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (-moz-min-device-pixel-ratio: 2),
@@ -17,7 +9,672 @@ Main page styles
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
   .hipster {
-    background: url('../../content/images/jhipster_family_member_1.svg') no-repeat center top;
+    background: url('../../content/images/jhipster_family_member_3.svg') no-repeat center top;
     background-size: contain;
   }
+}
+
+/*!
+* Start Bootstrap - Grayscale v7.0.6 (https://startbootstrap.com/theme/grayscale)
+* Copyright 2013-2023 Start Bootstrap
+* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-grayscale/blob/master/LICENSE)
+*/
+/*!
+ * Bootstrap  v5.2.3 (https://getbootstrap.com/)
+ * Copyright 2011-2022 The Bootstrap Authors
+ * Copyright 2011-2022 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
+ */
+
+//-----------------------------------------------------------------------------------------------------------------
+#mainNav {
+  min-height: 3.5rem;
+
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background color */
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+}
+#mainNav .navbar-toggler {
+  font-size: 80%;
+  padding: 0.75rem;
+  color: #64a19d;
+  border: 1px solid #64a19d;
+}
+#mainNav .navbar-toggler:focus {
+  outline: none;
+}
+
+#mainNav .navbar-brand {
+  color: #d3d3d3;
+  font-weight: 700;
+  padding: 0.9rem 0;
+}
+#mainNav .navbar-nav .nav-item:hover {
+  color: fade(#fff, 80%);
+  outline: none;
+}
+#mainNav .navbar-nav .nav-item:active,
+#mainNav .navbar-nav .nav-item:focus {
+  outline: none;
+}
+
+.nav-link {
+  font-family:
+    'Varela Round',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: 1rem;
+  font-weight: 550;
+  /*  line-height:1.5rem; */
+  letter-spacing: 0.2rem;
+  /*  color: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)); */
+  z-index: 1;
+  color: #eee;
+}
+
+.btn {
+  box-shadow: 0 0.1875rem 0.1875rem 0 rgba(0, 0, 0, 0.1) !important;
+  padding: 1.25rem 2rem;
+  font-family:
+    'Varela Round',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: 80%;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  border: 0;
+}
+
+.masthead {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 35rem;
+  padding: 15rem 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%),
+    url('../../content/images/imageEditCover.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+.masthead h1,
+.masthead .h1 {
+  font-family:
+    'Varela Round',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: 2.5rem;
+  line-height: 4.5rem;
+  letter-spacing: 0.8rem;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+  z-index: 1;
+  /*  opacity: 0.8; */
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.masthead h2,
+.masthead .h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+    padding: 0;
+  }
+  .masthead h1,
+  .masthead .h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .masthead h2,
+  .masthead .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
+}
+
+/*------------------------------------------------------------------
+
+    Main Style Stylesheet
+    Project:        Vortex. |  StartUp Landing Page Template
+    Version:        1.0
+    Author:         Gnawi Themes
+    Last change:    8/29/2016
+    Primary use:    Landing,Startup and Showcase.
+
+-------------------------------------------------------------------*/
+/*-- Imports (only visible on scss file) --*/
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,400,700';
+/*========================================
+          Base Style
+========================================*/
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.typed-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+
+Typography
+/*========================================*/
+/*-- Typo Style --*/
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 35px;
+  color: #fff;
+}
+
+h2 {
+  font-size: 36px;
+  letter-spacing: 0.08em;
+}
+
+h3 {
+  font-size: 32px;
+  letter-spacing: 0.08em;
+}
+
+h4 {
+  font-size: 24px;
+  letter-spacing: 0.08em;
+}
+
+h5 {
+  font-size: 18px;
+  letter-spacing: 0.08em;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  line-height: 24px;
+}
+
+/*========================================
+            Buttons Style
+========================================*/
+
+.btn-transparent {
+  background: transparent;
+  padding: 10px 28px;
+  color: #088f1f;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  outline: none !important;
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus,
+.btn-transparent:active {
+  background: #088f1f;
+  color: #496174;
+}
+
+.btn-white {
+  background: #d3d3d3;
+  padding: 10px 28px;
+  color: #496174;
+  border: 2px solid #fff;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  outline: none !important;
+}
+
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active {
+  background-color: #088f1f;
+  color: #088f1f;
+}
+
+/*-- Navbar Bug Fix --*/
+
+/*========================================
+           Header
+========================================*/
+
+#home {
+  position: relative;
+  padding: 190px 0px 120px 0px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#home .caption {
+  padding: 60px 0;
+}
+#home .caption h2 {
+  color: #fff;
+}
+#home .caption p {
+  font-size: 18px;
+  margin-top: 25px;
+  color: #fff;
+}
+#home .caption .btn {
+  margin-top: 25px;
+}
+#home .caption .btn-blue {
+  margin-left: 15px;
+}
+#home .caption .btn-blue i {
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+}
+#home .signup-form {
+  opacity: 2;
+  padding: 45px;
+  border-radius: 5px;
+}
+#home .signup-form input {
+  border: 1px solid #eee;
+  height: 38px;
+  box-shadow: none !important;
+}
+#home .signup-form input:focus {
+  border-color: #44c5ee;
+}
+#home .signup-form .form-control {
+  font-size: 16px;
+  padding: 10px 15px;
+
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+.form-control {
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
+
+a {
+  cursor: pointer;
+  transition: all 200ms linear;
+}
+a:hover {
+  text-decoration: none;
+}
+.link {
+  color: #c4c3ca;
+}
+.link:hover {
+  color: #ffeba7;
+}
+p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.7;
+}
+h4 {
+  font-weight: 600;
+}
+h6 span {
+  padding: 0 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.section {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+.full-height {
+  min-height: 100vh;
+}
+[type='checkbox']:checked,
+[type='checkbox']:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.checkbox:checked + label,
+.checkbox:not(:checked) + label {
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 60px;
+  height: 16px;
+  border-radius: 8px;
+  padding: 0;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: #ffeba7;
+}
+.checkbox:checked + label:before,
+.checkbox:not(:checked) + label:before {
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #ffeba7;
+  background-color: #102770;
+  font-family: 'unicons';
+  content: '\eb4f';
+  z-index: 20;
+  top: -10px;
+  left: -10px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 24px;
+  transition: all 0.5s ease;
+}
+.checkbox:checked + label:before {
+  transform: translateX(44px) rotate(-270deg);
+}
+
+.card-3d-wrap {
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+  height: 400px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  margin-top: 60px;
+}
+.card-3d-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: all 600ms ease-out;
+}
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  background-color: #2a2b38;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 300%;
+  position: absolute;
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+
+  opacity: 0.9;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.card-back {
+  transform: rotateY(180deg);
+}
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+.center-wrap {
+  position: absolute;
+  width: 100%;
+  padding: 0 35px;
+  top: 50%;
+  left: 0;
+  transform: translate3d(0, -50%, 35px) perspective(100px);
+  z-index: 20;
+  display: block;
+}
+
+.form-group {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+.form-style {
+  padding: 13px 20px;
+  padding-left: 55px;
+  height: 48px;
+  width: 100%;
+  font-weight: 500;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  outline: none;
+  color: #c4c3ca;
+  background-color: #1f2029;
+  border: none;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+}
+.form-style:focus,
+.form-style:active {
+  border: none;
+  outline: none;
+  box-shadow: 0 4px 8px 0 rgba(21, 21, 21, 0.2);
+}
+/* .input-icon {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 18px;
+  height: 48px;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: left;
+  color: #ffeba7;
+  -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+} */
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  z-index: 1;
+  color: #ffeba7;
+  font-size: 24px;
+}
+
+.form-group input:-ms-input-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input::-moz-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:-moz-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input::-webkit-input-placeholder {
+  color: #c4c3ca;
+  opacity: 0.7;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus:-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.form-group input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+
+.btn {
+  border-radius: 4px;
+  height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  background-color: #ffeba7;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255, 235, 167, 0.2);
+}
+.btn:active,
+.btn:focus {
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+.btn:hover {
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16, 39, 112, 0.2);
+}
+
+.logo {
+  right: 30px;
+  display: block;
+
+  transition: all 250ms linear;
+}
+.logo img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+#heading {
+  font-weight: bold;
+}
+
+.text-white-custom {
+  font-family:
+    'Varela Round',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: 1rem;
+  font-weight: 350;
+  /*  line-height:1.5rem; */
+  letter-spacing: 0.1rem;
+  /*  color: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)); */
+  z-index: 1;
+  color: #eee;
+}
+
+.card-front h4,
+.card-back h4 {
+  font-family:
+    'Varela Round',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji';
+  font-size: 1.7rem !important;
+  font-weight: 650 !important;
+  /*  line-height:1.5rem; */
+  letter-spacing: 0.2rem !important;
+  /*  color: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6)); */
+  z-index: 1;
+  color: #eee !important;
+  /*  opacity: 1 !important; */
 }
